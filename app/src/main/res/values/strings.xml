@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CloudEdge Motion Toggle</string>
+    <string name="signin">Se connecter avec Google</string>
+    <string name="signout">Se déconnecter</string>
+    <string name="enable_all">Activer détection (toutes les caméras)</string>
+    <string name="disable_all">Désactiver détection (toutes les caméras)</string>
+    <string name="status_signed_in">Connecté: %1$s</string>
+    <string name="status_signed_out">Non connecté</string>
+    <string name="cloudedge_note_title">Important</string>
+    <string name="cloudedge_note_msg">CloudEdge ne fournit pas d’API publique ni de connexion Google pour les apps tierces. Cette app utilise un client CloudEdge local (à intégrer) inspiré du projet CloudEdge4Tasker pour activer/désactiver la détection. Remplacez l’implémentation stub par le client réel et utilisez un compte CloudEdge secondaire partagé avec vos caméras.</string>
+    <string name="ok">OK</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_signed_out"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
+        android:paddingBottom="16dp"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp" />
+
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signout"
+        android:visibility="gone"
+        android:paddingBottom="32dp"/>
+
+    <Button
+        android:id="@+id/enableAllButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enable_all"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <Button
+        android:id="@+id/disableAllButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/disable_all"/>
+
+</LinearLayout>
