@@ -1,47 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="24dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/statusText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/status_signed_out"
-        android:textAppearance="?attr/textAppearanceHeadlineSmall"
-        android:paddingBottom="16dp"/>
+    <data>
+        <!-- Variables de binding si besoin -->
+    </data>
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/signInButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp" />
-
-    <Button
-        android:id="@+id/signOutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signout"
-        android:visibility="gone"
-        android:paddingBottom="32dp"/>
-
-    <Button
-        android:id="@+id/enableAllButton"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/enable_all"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
 
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="12dp" />
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non connecté"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"/>
 
-    <Button
-        android:id="@+id/disableAllButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/disable_all"/>
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se connecter avec Google" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/signOutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se déconnecter"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/enableAllButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activer détection"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/disableAllButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Désactiver détection"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</layout>
