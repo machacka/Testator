@@ -1,43 +1,39 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //id("com.google.gms.google-services")
+    //id("com.google.gms.google-services") // Si tu utilises Firebase ou Google Sign-In
 }
 
 android {
     namespace = "com.example.cloudedge"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.cloudedge"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-        vectorDrawables { useSupportLibrary = true }
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = true
+        getByName("release") {
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-        debug {
-            isMinifyEnabled = false
-        }
     }
 
-    buildFeatures {
-        viewBinding = true
+    // Forcer Java 17 pour Java et Kotlin
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 
@@ -45,15 +41,12 @@ dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.activity:activity-ktx:1.9.2")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Google Sign-In (client-only; requires configuration)
+    // Authentification Google
     //implementation("com.google.android.gms:play-services-auth:21.2.0")
 
-    // Kotlin coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
-
-    // (Optional) Timber logging
-    implementation("com.jakewharton.timber:timber:5.0.1")
+    // Appel API CloudEdge (exemple HTTP client)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
 }
