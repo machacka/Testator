@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //id("com.google.gms.google-services") // Si tu utilises Firebase ou Google Sign-In
+    //id("com.google.gms.google-services")
 }
 
 android {
@@ -26,14 +26,18 @@ android {
         }
     }
 
-    // Forcer Java 17 pour Java et Kotlin
+    // Java 17 partout
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    // Active le DataBinding
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -43,10 +47,15 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Authentification Google
+    // Auth Google (Google Identity Services)
     //implementation("com.google.android.gms:play-services-auth:21.2.0")
+    //implementation("com.google.android.gms:play-services-identity:18.1.0")
+    //implementation("com.google.android.gms:play-services-base:18.5.0")
 
-    // Appel API CloudEdge (exemple HTTP client)
+    // HTTP API calls
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
+
+    // Logging avec Timber
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }
